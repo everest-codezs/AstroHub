@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroHub</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #050014;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Particle Background */
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #8a2be2, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      animation: glowTitle 3s infinite alternate;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      max-width: 600px;
+    }
+
+    /* Button */
+    .btn {
+      margin-top: 40px;
+      padding: 15px 40px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #8a2be2, #4e11c2, #00d4ff);
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      transition: 0.25s ease;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      animation: btnGlow 3s infinite alternate;
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.9);
+    }
+
+    /* Animations */
+    @keyframes glowTitle {
+      from { text-shadow: 0 0 10px #8a2be2; }
+      to { text-shadow: 0 0 25px #00d4ff; }
+    }
+
+    @keyframes btnGlow {
+      from { box-shadow: 0 0 15px #8a2be2; }
+      to { box-shadow: 0 0 35px #00d4ff; }
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="container">
+  <h1>Welcome to AstroHub</h1>
+  <p>Your gateway to unblocked games, tools, apps, and more — all in one clean, modern hub.</p>
+
+  <a class="btn" href="games.html">Enter AstroHub</a>
+</div>
+
+<!-- Particle Script -->
+<script>
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  for (let i = 0; i < 100; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2 + 1,
+      speedX: (Math.random() - 0.5) * 0.3,
+      speedY: (Math.random() - 0.5) * 0.3,
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p) => {
+      p.x += p.speedX;
+      p.y += p.speedY;
+
+      if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255,255,255,0.7)";
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
+</body>
+</html>

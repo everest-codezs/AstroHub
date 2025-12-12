@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroHub – Games</title>
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+      font-family: Poppins, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 3rem;
+    }
+
+    /* Game Grid */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Game Card */
+    .game {
+      background: #1f1f2f;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00000055;
+    }
+
+    .game:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 15px #6a5acd;
+    }
+
+    .game img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .game:hover img {
+      filter: brightness(1.2);
+    }
+
+    .game-title {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose a Game</h1>
+
+  <div class="game-grid">
+
+   <div class="game" data-name="slope">
+  <a href="iframe.html?=slope" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/slope.png" alt="slope" class="game-thumbnail" />
+  </a>
+</div>
+
+<div class="game" data-name="retrobowl">
+  <a href="iframe.html?=retrobowl" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/retrobowl.png" alt="retrobowl" class="game-thumbnail" />
+  </a>
+</div>
+
+<div class="game" data-name="retrobowlcollege">
+  <a href="iframe.html?=retrobowlcollege" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/retrobowlcollege.png" alt="retrobowlcollege" class="game-thumbnail" />
+  </a>
+</div>
+
+<div class="game" data-name="run3">
+  <a href="iframe.html?=run3" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/run3.png" alt="run3" class="game-thumbnail" />
+  </a>
+</div>
+
+<div class="game" data-name="motox3m">
+  <a href="iframe.html?=motox3m" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/motox3m.png" alt="motox3m" class="game-thumbnail" />
+  </a>
+</div>
+
+<div class="game" data-name="motox3m2">
+  <a href="iframe.html?=motox3m2" class="game-link" target="_blank" rel="noopener noreferrer">
+    <img src="/images/motox3m2.png" alt="motox3m2" class="game-thumbnail" />
+  </a>
+</div>
+
+  </div>
+
+</body>
+</html>

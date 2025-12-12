@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Play</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    color: white;
+  }
+
+  #frame {
+    width: 70vw;
+    height: 60vh;
+    border: none;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px #7e2bff;
+  }
+
+  #frame.full {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #7e2bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+
+<iframe id="frame"></iframe>
+
+<button class="btn" onclick="toggleFull()">Fullscreen</button>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const url = params.get("url");
+
+document.getElementById("frame").src = url;
+
+function toggleFull() {
+  document.getElementById("frame").classList.toggle("full");
+}
+</script>
+
+</body>
+</html>

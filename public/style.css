@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ---------------- INTRO PAGE ---------------- */
+
+.intro-bg {
+  background: radial-gradient(circle at top, #6d00ff, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.intro-container {
+  text-align: center;
+  z-index: 3;
+}
+
+.intro-title {
+  font-size: 3.5rem;
+  text-shadow: 0 0 20px #b974ff;
+}
+
+.intro-sub {
+  margin-top: -10px;
+  opacity: .7;
+}
+
+.intro-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 40px;
+  background: #7f3bfd;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: .2s;
+  box-shadow: 0 0 15px #7f3bfd;
+}
+
+.intro-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px #b974ff;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* ---------------- GAME CARDS ---------------- */
+
+.games-bg {
+  background: #080010;
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.2rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 25px;
+  padding: 40px;
+  justify-content: center;
+}
+
+.game-card {
+  background: #130026;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px #4c2081;
+  transition: .2s;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #7b36d1;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ---------------- IFRAME PLAYER ---------------- */
+
+.iframe-bg {
+  background: #06000d;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-wrapper {
+  width: 80vw;
+  height: 70vh;
+  background: #120022;
+  border-radius: 18px;
+  padding: 10px;
+  position: relative;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+#fsBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #7f3bfd;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7f3bfd;
+  transition: .2s;
+}
+
+#fsBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #b974ff;
+}
